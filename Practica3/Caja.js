@@ -1,5 +1,6 @@
 let pedidos = [];
 
+
 export function agregarPedido(pedido) {
     pedidos.push(pedido);
     if (pedido.items) {
