@@ -10,14 +10,10 @@ export default function App() {
   return (
 
     <View style={styles.container}>
-      <Image source={require('./assets/Saludo.png')}/>
-      <Text>Hola mundo React Native</Text>
-      <Text>------------------------------------</Text>
-      <Saludo/>
-      <Text>------------------------------------</Text>
-      <Saludo2/>
-      <Text>------------------------------------</Text>
-      <Perfil/>
+    <Perfil nombre="Brando Aldair Machucho Ambrocio" carrera="Ingeniería en Sistemas Computacionales" materia="Programación Móvil" cuatri="Noveno cuatrimestre"/>
+    <Perfil nombre="Andreu" carrera="ISC" materia="POO" cuatri="6"/>
+
+
       <StatusBar style="auto" />
 
     </View>
