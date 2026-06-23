@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import TarjetasScreen from './TarjetasScreen';
 import Componente1 from './Componente1';
 import SwitchScreen from './SwitchScreen';
+import SafeAreaViewScreen from './SafeAreaViewScrollView';
 
 /* Zona 2: Main - Componentes */
 export default function App() {
@@ -22,6 +23,8 @@ export default function App() {
         case 'Switch':
             return <SwitchScreen />;
 
+        case 'SafeAreaView':
+            return <SafeAreaViewScreen />;
         case 'Menu':
         default:
 
@@ -43,6 +46,11 @@ export default function App() {
                     <Button
                         title='Practica Switch'
                         onPress={() => setScreen('Switch')}
+                    />
+
+                    <Button
+                        title='Practica SafeAreaView'
+                        onPress={() => setScreen('SafeAreaView')}
                     />
 
                 </View>
