@@ -6,6 +6,8 @@ import TarjetasScreen from './TarjetasScreen';
 import Componente1 from './Componente1';
 import SwitchScreen from './SwitchScreen';
 import SafeAreaViewScreen from './SafeAreaViewScrollView';
+import  TextInputScreen  from './TextInputScreen';
+import AlertScreen from './AlertScreen';
 
 /* Zona 2: Main - Componentes */
 export default function App() {
@@ -25,6 +27,13 @@ export default function App() {
 
         case 'SafeAreaView':
             return <SafeAreaViewScreen />;
+
+        case 'TextInput':
+            return <TextInputScreen />;
+
+        case 'Alert':
+            return <AlertScreen />;
+
         case 'Menu':
         default:
 
@@ -51,6 +60,16 @@ export default function App() {
                     <Button
                         title='Practica SafeAreaView'
                         onPress={() => setScreen('SafeAreaView')}
+                    />
+
+                    <Button
+                        title='Practica TextInput'
+                        onPress={() => setScreen('TextInput')}
+                    />
+
+                    <Button
+                        title='Practica Alert'
+                        onPress={() => setScreen('Alert')}
                     />
 
                 </View>
