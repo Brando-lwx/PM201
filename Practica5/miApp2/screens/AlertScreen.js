@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Text, View, StyleSheet, Alert, Button, Platform } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function AlertScreen() {
 
@@ -46,7 +45,7 @@ export default function AlertScreen() {
         );
 
     return (
-        <SafeAreaView style={styles.container}>
+        <View style={styles.container}>
 
             <Text style={styles.title}>Hola RN: Componente Alert</Text>
 
@@ -68,7 +67,7 @@ export default function AlertScreen() {
                 />
             </View>
 
-        </SafeAreaView>
+        </View>
     );
 }
 

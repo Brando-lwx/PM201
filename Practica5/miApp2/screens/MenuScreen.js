@@ -8,6 +8,8 @@ import SwitchScreen from './SwitchScreen';
 import SafeAreaViewScreen from './SafeAreaViewScrollView';
 import  TextInputScreen  from './TextInputScreen';
 import AlertScreen from './AlertScreen';
+import FlatListScreen from './FlatListScreen';
+import SectionListScreen from './SectionListScreen';
 
 /* Zona 2: Main - Componentes */
 export default function App() {
@@ -33,6 +35,12 @@ export default function App() {
 
         case 'Alert':
             return <AlertScreen />;
+
+        case 'FlatList':
+            return <FlatListScreen />;
+
+        case 'SectionList':
+            return <SectionListScreen />;
 
         case 'Menu':
         default:
@@ -70,6 +78,16 @@ export default function App() {
                     <Button
                         title='Practica Alert'
                         onPress={() => setScreen('Alert')}
+                    />
+
+                    <Button
+                        title='Practica FlatList'
+                        onPress={() => setScreen('FlatList')}
+                    />
+
+                    <Button
+                        title='Practica SectionList'
+                        onPress={() => setScreen('SectionList')}
                     />
 
                 </View>
