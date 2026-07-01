@@ -1,7 +1,7 @@
 /* Zona 1: Importaciones de archivos y componentes */
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Button } from 'react-native';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TarjetasScreen from './TarjetasScreen';
 import Componente1 from './Componente1';
 import SwitchScreen from './SwitchScreen';
@@ -10,11 +10,23 @@ import  TextInputScreen  from './TextInputScreen';
 import AlertScreen from './AlertScreen';
 import FlatListScreen from './FlatListScreen';
 import SectionListScreen from './SectionListScreen';
+import { ImagenFondo } from './ImageBackgroung';
+import { SplashScreen } from './SplahsScreen';
+import { Home } from './home';
 
 /* Zona 2: Main - Componentes */
 export default function App() {
 
     const [screen, setScreen] = useState('Menu');
+
+    useEffect(() => {
+        if (screen === 'Splash') {
+            const timer = setTimeout(() => {
+                setScreen('Home');
+            }, 6000);
+            return () => clearTimeout(timer);
+        }
+    }, [screen]);
 
     switch (screen) {
 
@@ -41,6 +53,16 @@ export default function App() {
 
         case 'SectionList':
             return <SectionListScreen />;
+
+        case 'ImageBackground':
+            return <ImagenFondo />;
+
+        case 'Home':
+            return <Home />;
+        
+        case 'Splash':
+            return <SplashScreen />;
+
 
         case 'Menu':
         default:
@@ -89,6 +111,17 @@ export default function App() {
                         title='Practica SectionList'
                         onPress={() => setScreen('SectionList')}
                     />
+
+                    <Button
+                        title='Practica ImageBackground'
+                        onPress={() => setScreen('ImageBackground')}
+                    />
+
+                    <Button
+                        title='Practica Splash'
+                        onPress={() => setScreen('Splash')}
+                    />
+
 
                 </View>
             ); // Return
